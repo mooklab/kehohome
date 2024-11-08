@@ -1,0 +1,113 @@
+include _header.pug
+
+script(src="https://api-maps.yandex.ru/2.1/?lang=ru-RU", type="text/javascript")
+br
+br
+section.introduce
+    div.container
+        h1 Контакты
+        br
+        hr.title
+        br
+        p
+            | Наша задача – удовлетворение всех потребностей заказчика касаемо мягкой мебели, и поэтому 
+            | каждое наше изделие — это уникальная работа мастеров, выполненная в лучших традициях 
+            | подхода к качеству.
+br
+br
+br
+br
+section.adresses.tabs
+    div(class="tabs_caption")
+        span(class="active_tab") Офис продаж
+        span Фабрика производства
+    div.wrap
+        br
+        br
+        br
+        div(class="tabs_content")
+            div(class="tab_content active_tab")
+                div.info
+                    div.adress 193231, г. Москва,  ул. Горбунова дом 2 строение 3, БЦ &quot;Гранд Сетунь Плаза&quot;
+                    div.contacts
+                        p Телефон:&amp;nbsp;&amp;nbsp;
+                            a(href="tel:+74951778725") +7 (495) 177-87-25
+                        p Почта:&amp;nbsp;&amp;nbsp;
+                            a(href="mailto:info@kehowork.ru") info@kehowork.ru
+                        p График:&amp;nbsp;&amp;nbsp;
+                            span с 10:00 до 20:00
+                    div(class="button callback_button") Написать нам
+                br
+                br
+                br
+                div(id="map_office").map
+            div(class="tab_content")
+                div.info
+                    div.adress 193231, Московская область, г. Одинцово,  Можайское шоссе 8
+                    div.contacts
+                        p Телефон:&amp;nbsp;&amp;nbsp;
+                            a(href="tel:+74951778725") +7 (495) 177-87-25
+                        p Почта:&amp;nbsp;&amp;nbsp;
+                            a(href="mailto:info@kehowork.ru") info@kehowork.ru
+                        p График:&amp;nbsp;&amp;nbsp;
+                            span с 10:00 до 20:00
+                    div(class="button callback_button") Написать нам
+                br
+                br
+                br
+                div(id="map_factory").map
+
+
+script.
+
+    ymaps.ready(function(){
+        var map_office = new ymaps.Map('map_office', {
+            center: [55.726233, 37.399483],
+            zoom: 15,
+            controls: ["zoomControl"]
+        })
+        var placemark_office = new ymaps.Placemark([55.726233, 37.399483], {
+            hintContent: 'Офис продаж',
+            balloonContent: '\
+                <span>адрес:</span>\
+                <p>г. Москва, ул. Горбунова дом 2 строение 3</p>\
+                <span>Телефон:</span>\
+                <a href="tel:+74951778725">+7 (495) 177-87-25</a>\
+                <span>Почта:</span>\
+                <a href="mailto:info@kehowork.ru">info@kehowork.ru</a>\
+            '
+        }, {
+            iconLayout: 'default#image',
+            iconImageHref: 'images/pin.svg',
+            iconImageSize: [50, 50],
+            iconImageOffset: [-30, -45]
+        });
+        map_office.geoObjects.add(placemark_office);
+        map_office.behaviors.disable('scrollZoom')
+
+        var map_factory = new ymaps.Map('map_factory', {
+            center: [55.670018, 37.270911],
+            zoom: 15,
+            controls: ["zoomControl"]
+        })
+        var placemark_factory = new ymaps.Placemark([55.670018, 37.270911], {
+            hintContent: 'Офис продаж',
+            balloonContent: '\
+                <span>адрес:</span>\
+                <p>Московская область, г. Одинцово, Можайское шоссе 8</p>\
+                <span>Телефон:</span>\
+                <a href="tel:+74951778725">+7 (495) 177-87-25</a>\
+                <span>Почта:</span>\
+                <a href="mailto:info@kehowork.ru">info@kehowork.ru</a>\
+            '
+        }, {
+            iconLayout: 'default#image',
+            iconImageHref: 'images/pin.svg',
+            iconImageSize: [50, 50],
+            iconImageOffset: [-30, -45]
+        });
+        map_factory.geoObjects.add(placemark_factory);
+        map_factory.behaviors.disable('scrollZoom')
+    })
+
+include _footer.pug

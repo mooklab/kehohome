@@ -1,0 +1,87 @@
+mixin product(image, title, price)
+    div(class="product_card")
+        a(href="product.html", class="desktop_link")
+        div.preview
+            div(style="background-image: url(" + image + ")")
+        br
+        a(href="product.html", class="animated_arrow")
+            span(class="the_arrow left"): span.shaft
+            span.main
+                span(class="link_text")= title
+                span(class="the_arrow right"): span.shaft
+        p от ₽ 27 799
+        div.hidden: p Разработаем концепцию, построим, проведем открытие и возьмем на себя управление вашими будущим бизнесом.
+
+include _header.pug
+
+br
+br
+br
+br
+section.introduce
+    div.container
+        h1 Журнальные столы
+        br
+        hr(style="margin: 0 auto").title
+        br
+        p Дизайнерские столы в лаконичном скандинавском стиле помогут создать удобную продуманную обстановку и придадут интерьеру особый шик. Модели, представленные в каталоге, привлекают элегантным дизайном — мягкими плавными очертаниями и простотой геометрических форм.
+br
+br
+br
+br
+
+section.filter
+    div.container
+        div.custom-select
+            label(for="study_center") Категория:
+            select(name="study_center")
+                option(value="0") Выберите категорию
+                option(value="1", selected) Комоды
+                option(value="2") ТВ тумбы
+                option(value="3") Шкафы
+                option(value="4") Витрины
+                option(value="4") Прикроватные тумбы
+        div.custom-select
+            label(for="study_center") Коллекция:
+            select(name="study_center")
+                option(value="0") Выберите коллекцию
+                option(value="1") Для дома
+                option(value="2") Для гостинной
+                option(value="3") Для ванной
+                option(value="4") Для прихожей
+                option(value="4") Для кухни
+        include ../images/sort.svg
+br
+br
+br
+section.products
+    div.container
+        div.list.four
+            +product('images/card-1.jpg', 'Комод Lugano', 'от ₽ 27 799')
+            +product('images/card-2.jpg', 'Комод Lugano', 'от ₽ 27 799')
+            +product('images/card-3.jpg', 'Комод Lugano', 'от ₽ 27 799')
+            +product('images/card-4.jpg', 'Комод Lugano', 'от ₽ 27 799')
+            +product('images/card-5.jpg', 'Комод Lugano', 'от ₽ 27 799')
+            +product('images/card-6.jpg', 'Комод Lugano', 'от ₽ 27 799')
+            +product('images/card-7.jpg', 'Комод Lugano', 'от ₽ 27 799')
+            +product('images/card-8.jpg', 'Комод Lugano', 'от ₽ 27 799')
+            +product('images/card-1.jpg', 'Комод Lugano', 'от ₽ 27 799')
+            +product('images/card-2.jpg', 'Комод Lugano', 'от ₽ 27 799')
+            +product('images/card-3.jpg', 'Комод Lugano', 'от ₽ 27 799')
+            +product('images/card-4.jpg', 'Комод Lugano', 'от ₽ 27 799')
+            +product('images/card-5.jpg', 'Комод Lugano', 'от ₽ 27 799')
+            +product('images/card-6.jpg', 'Комод Lugano', 'от ₽ 27 799')
+            +product('images/card-7.jpg', 'Комод Lugano', 'от ₽ 27 799')
+            +product('images/card-8.jpg', 'Комод Lugano', 'от ₽ 27 799')
+
+        div(class="show_more") Показать еще 
+            span +
+br
+br
+br
+br
+br
+br
+
+
+include _footer.pug

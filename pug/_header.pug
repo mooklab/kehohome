@@ -1,0 +1,51 @@
+doctype html
+html(lang="ru")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap", rel="stylesheet")
+        link(rel="stylesheet", type="text/css", href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css")
+        link(rel="stylesheet", href="less/style.css")
+        script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js")
+        script(src="scripts/slick.js")
+        script(src="scripts/script.js")
+        title Document
+    body
+        include _menu_popup.pug
+        include _callback_popup.pug
+
+        br
+        header
+            div.container
+                div(class="menu_icon")
+                    div
+                    div
+                    div
+                a(href="/").logotype KEXO
+                ul.menu
+                    li.has-child
+                        a Каталог мебели
+                        ul
+                            li: a(href="categories.html") Хранение
+                            li: a(href="categories.html") Столы
+                            li: a(href="categories.html") Кухни
+                            li: a(href="categories.html") Гардеробные комнаты
+                            li: a(href="categories.html") Жилые зоны
+                            li: a(href="categories.html") Другие изделия
+                    li.has-child
+                        a Коллекции
+                        ul
+                            li: a(href="collections.html") Для дома
+                            li: a(href="collections.html") Для гостинной
+                            li: a(href="collections.html") Для ванной
+                            li: a(href="collections.html") Для прихожей
+                            li: a(href="collections.html") Для кухни
+                    li: a(href="order.html") Мебель на заказ
+                    li: a(href="partnership.html") Партнерство
+                    li: a(href="about.html") О фабрике
+                    li: a(href="contacts.html") Контакты
+
+                a(href="tel:+74951778725").phone +7 (495) 177-87-25
+                a(href="###").search: img(src="images/search.svg")
+        br
